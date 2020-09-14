@@ -1,0 +1,106 @@
+<html>
+	  <head>
+         <title>Allermatch: Allermatch </title>
+      </head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <body>
+        <table border='0' width='100%' height='100%' cellpadding='0' cellspacing='10'>
+          <tr height =' 1%'>
+           <td colspan='2' valign='top'>
+
+            <table border='0' width='100%' cellpadding='0' cellspacing='0'
+            background="{{ url_for('static', filename='images/allermatch_filler.png') }}">
+            <tr><td valign='top'><a href='http://allermatch.org'>
+              <img border='0' src="{{ url_for('static', filename='images/allermatch_logo.png') }}"></a>
+               </td></tr><tr><td height='10'>&nbsp;</td></tr>
+            </table>
+          </td></tr>
+          <tr>
+             <td valign='top'>
+                  <a href='/index.html'>Home</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/allermatchsearch/form'>Search</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/database.html'>Databases</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/publication.html'>Publication</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/help.html'>Introduction</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/example.html'>Example</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/about.html'>About us</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/feedback.html'>Feedback</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/disclaimer.html'>Disclaimer</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/copyright.html'>Copyright</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/thanks.html'>Thanks</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/references.html'>References</a>&nbsp;&nbsp;&nbsp;<br>
+             </td>
+          <td valign='top'>
+<!--#include virtual="header.html" -->
+
+<h2><a name="References"></a>References</h2>
+<ol>
+<li><a name="ref_1"></a>Codex Alimentarius Commission (2003)
+Guideline for the Conduct of Food Safety Assessment of Foods derived from Recombinant-DNA Plants (CAC/GL 45-2003). Rome: Codex Alimentarius, Joint FAO/WHO Food Standards Program. <p>
+Available at: <a href='http://www.fao.org/fileadmin/user_upload/gmfp/docs/CAC.GL_45_2003.pdf'>http://www.fao.org/fileadmin/user_upload/gmfp/docs/CAC.GL_45_2003.pdf</a><br>
+<br>
+This document recommends the following sequence comparisons between
+transgenic and allergenic proteins:<br>
+<br>
+<cite>8. The purpose of a sequence homology comparison is to
+assess the
+extent to which a newly expressed protein is similar in structure to a
+known allergen. This information may suggest whether that protein has
+an allergenic potential. Sequence homology searches comparing the
+structure of all newly expressed proteins with all known allergens
+should be done. Searches should be conducted using various algorithms
+such as FASTA or BLASTP to predict overall structural similarities.
+Strategies such as stepwise contiguous identical amino acid segment
+searches may also be performed for identifying sequences that may
+represent linear epitopes. The size of the contiguous amino acid search
+should be based on a scientifically justified rationale in order to
+minimize the potential for false negative or false positive results*.
+Validated search and evaluation procedures should be used in order to
+produce biologically meaningful results.<br>
+<br>
+9. IgE cross-reactivity between the newly expressed protein and a known
+allergen should be considered a possibility when there is more than 35%
+identity in a segment of 80 or more amino acids (FAO/WHO 2001) or other
+scientifically justified criteria. All the information resulting from
+the sequence homology comparison between the newly expressed protein
+and known allergens should be reported to allow a case-by-case
+scientifically based evaluation.<br>
+<br>
+* It is recognized that the 2001 FAO/WHO consultation suggested moving
+from 8 to 6 identical amino acid segments in searches. The smaller the
+peptide sequence used in the stepwise comparison, the greater the
+likelihood of identifying false positives, inversely, the larger the
+peptide sequence used, the greater the likelihood of false negatives,
+thereby reducing the utility of the comparison.<br>
+</cite><br>
+</li>
+<li><a name="ref_2"></a>FAO/WHO (2001) Joint FAO/WHO Expert
+Consultation on Foods Derived from Biotechnology - Allergenicity of
+Genetically Modified Foods - Rome, 22 - 25 January 2001. Rome: Food and
+Agriculture Organisation of the United Nations.<a
+href="http://www.who.int/foodsafety/publications/biotech/en/ec_jan2001.pdf">http://www.who.int/foodsafety/publications/biotech/en/ec_jan2001.pdf</a></li>
+<li><a name="ref_3"></a>Fiers, M.W.E.J., Gijs A Kleter, G.A., Nijland, H., Peijnenburg, A.A.C.N., Nap, J.P., van Ham R.C.H.J. (2004)
+Allermatch., a webtool for the prediction of potential allergenicity according to current FAO/WHO Codex alimentarius guidelines.
+BMC Bioinformatics 5:133.
+<a href='http://www.biomedcentral.com/1471-2105/5/133'>http://www.biomedcentral.com/1471-2105/5/133</a>
+<br>
+</li>
+</ol>
+
+(c) WFSR - Wageningen University and Research, and Bioscience - Wageningen University and Research<br>
+<!--#include virtual="footer.html" -->
+  </td></tr>
+     <tr><td valign='bottom' colspan='2'>
+        <table width='100%'><tr>
+           <td valign='bottom'>
+           <td valign='bottom'>
+               <a href='mailto:Gijs.Kleter@wur.nl'>Questions: Dr. Gijs Kleter</a><br>
+           </td>
+           <td valign='bottom' align='right'>
+            <img align='right' src='/static/images/wageningenur.gif'>
+         </td></td></tr>
+     </table>
+  </td></tr>
+</table>
+</body>
+</html>

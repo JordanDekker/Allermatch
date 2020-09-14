@@ -1,0 +1,161 @@
+#!/usr/bin/python
+
+# Find an allergen cgi script
+#
+# In Cooperation with Gijs Kleter en Ad Peijnenburg from
+# WFSR Wageningen
+#
+# By Mark Fiers
+# Februari 2004
+# Plant Research International
+#
+# Example sequence
+#
+#    aiscgqvasaiapcisyargqgsgpsagccsgvrslnnaarttadrraacnclknaaagvsglnagnaasipskcgvsipytiststdcsrvn
+#
+# modified by Valerie van der Vorst
+# Date 31 augustus
+
+#from mod_python import apache
+#from mod_python import util
+import  random, time, os, sys, string, re, copy
+from flask import Flask
+from flask import request
+
+
+sys.path.append(os.path.dirname(__file__))
+from allermatch_settings import *
+from allermatch_functions import *
+app = Flask(__name__)
+
+###################################################################################################
+# Print the request form
+###################################################################################################
+@app.route('/form')
+def form():
+    #send_header(req)
+    rv = header()
+    rv += """
+      <h2>Allermatch allergen finder: Input Form</h2>
+       This webpage features the following three ways of analysis to identify a relationship
+       between your input sequence and an allergen from the database:
+	<ul>
+         <li><b>80-amino-acid sliding window:</b> The input sequence is
+             chopped up in 80-amino-acid windows. For each 80-
+             amino acid window, the program counts which allergen it hits
+             (with a specific identity).
+         <li><b>Full Alignment:</b> Use FASTA to perform a full alignment.
+         <li><b>Wordmatch:</b> Look for an exact hit of 6 or more contiguous amino acids in a sequence in the database.
+	</ul>
+
+	As explained under <a href="../database.html">Databases</a>, comparisons can be run against either of the following two databases:
+	<ol>
+	<li>The <b>AllergenDB_propeptides_removed</b> databases contains allergen sequences from which the signal- and propeptide sequences are removed when post-translational modifications (PTMs) were predicted by UniProtKB.
+	<li>The <b>AllergenDB_original_sequences</b> database contains the non-processed allergen sequences with PTMs.
+	</ol>
+
+<br></br>
+
+         <table border='1' style='border-style: solid; border-width: 1;'
+                            cellspacing='0' cellpadding='0'><tr><td>
+             <form name='allerform'  method='POST' action = '/allermatchsearch/search'
+                   enctype='application/x-www-form-urlencoded'>
+             <input type='hidden' name='against' value=''>
+             <table celspacing='0' cellpadding='5' width='100%'>
+                  <tr><td colspan='2'><b>
+                        Copy-paste your amino acid sequence here:</b>
+                    </td> </tr>
+                  <tr><td colspan='2'>
+                      <textarea name='seq' rows='4' cols='80'></textarea>
+                    </td> </tr>
+                    <tr><td colspan='2'><b>Algorithm:</b></td></tr>
+                  <tr><td colspan='1'>
+                     <input type='radio' name='method' value='window' checked>
+                      Do an 80-amino-acid sliding window alignment
+                    </td> <td colspan='1'>
+                      <input type='text' name='cutOff' size='10' maxlength='8' value='35'>
+                      Cut-off Percentage (only applicable to the 80-amino-acid sliding window)
+                    </td> </tr>
+                  <tr><td colspan='1'>
+                      <input type='radio' name='method' value='wordmatch'>
+                      Look for a small exact wordmatch
+                    </td> <td colspan='1'>
+                      <input type='text' name='wordlength' size='10' maxlength='8' value='6'>
+                      Wordlength (only applicable to the exact wordmatch search)
+                    </td> </tr>
+                  <tr><td colspan='1'>
+                      <input type='radio' name='method' value='full'>
+                      Do a full FASTA alignment
+                    </td> </tr>
+                  <tr><td>
+                     <b>Select a database:</b>
+                     <td> <select name='database'> """
+    for db in ["AllergenDB_propeptides_removed", "AllergenDB_original_sequences"]:
+        if db == database_default: selected = 'selected'
+        else: selected = ''
+        rv +=  "%s<option value='%s' %s>%s</option>\n" % (" " * 20, db,selected,db)
+
+    rv += """             </select>
+                  </tr></td>
+                  <tr><td colspan='2'>
+                      <input style='padding-left: 25px; padding-right: 25px;
+                                    padding-top:10px; padding-bottom:10px;'
+                             name=' Go ' value='Go' type='submit'>
+                    </td> </tr>
+             </table>
+             </form> <p>
+             </td></tr>
+          </table> <p>
+
+          """
+    rv += footer()
+    return rv
+
+###################################################################################################
+# Main function, delegate to routines
+###################################################################################################
+@app.route('/search',  methods=['POST'])
+def search():
+    database = request.values.get('database')
+    seq = request.values.get('seq')
+    method = request.values.get('method')
+    cutOff = request.values.get('cutOff')
+    wordlength = request.values.get('wordlength')
+    against = request.values.get('against')
+    wordlength = int(wordlength)
+    cutOff = float(cutOff)
+    seq = extractSeq(seq)
+    Form = request.form
+
+    if Form.has_key('rawOutput'): rawOutput = 1
+    else: rawOutput = 0
+
+    if not rawOutput: rv = [header(),'']
+    else: rv = [rawHeader(),'']
+
+    if not rawOutput: rv.append('<h4>Database : %s</h4> ' %(database))
+
+    if method == 'full':
+        rv[1]=("<h2>Full Alignment</h2>")
+        rv.extend(CalcFull(seq, database))
+    elif method == 'window':
+        if not rawOutput:  rv[1]=("<h2>80-amino-acid sliding window</h2>")
+        rv.extend(CalcWindow(seq, database, cutOff, rawOutput))
+    elif method == 'windowSingle':
+        rv[1]=("<h2>80-amino-acid sliding window against %(against)s</h2>" % vars())
+        if Form.has_key('allAlignments'): allAlignments = int(Form['allAlignments'])
+        else: allAlignments = 0
+#        allAlign = str(Form['allAlignments'])
+        rv.extend(CalcWindowSingle(seq, database, cutOff, against, allAlignments))
+    elif method == 'wordmatch':
+        if not rawOutput: rv[1]=("<h2>%(wordlength)d Amino Acid Wordmatch</h2>" % vars())
+        rv.extend(CalcWordmatch(seq, database, wordlength, rawOutput))
+    elif method == 'wordmatchSingle':
+        rv[1]=("<h2>%(wordlength)d Amino Acid Wordmatch against %(against)s</h2>" % vars())
+        rv.extend(CalcWordmatchSingle(seq, database, wordlength, against))
+
+    if not rawOutput: rv.append(footer())
+    return "\n".join(rv)
+
+if __name__ == '__main__':
+  app.run(debug=True)

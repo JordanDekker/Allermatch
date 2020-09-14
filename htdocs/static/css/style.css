@@ -1,0 +1,102 @@
+sup {
+   vertical-align: top;
+   font-size: 70%;
+   }
+h1 {
+   font-size: 32;
+   color: #006699;
+   }  
+h2 {
+   font-size: 24;
+   color: #006699;
+   } 
+h3 {
+   font-size: 20;
+   color: #006699;
+   }
+h4 {
+   font-size: 16;
+   color: #006699;
+   }
+a:active {
+	color: #004B77;
+}
+a:link {
+	color: #003333;
+}
+a:visited {
+	color: #003333;
+}
+body {
+	color: #000000;
+	font-family: arial, helvetica, sans-serif;
+}
+input {
+        background-color: #dfdeda;
+	border-width: 2;
+	border-color: #004B77;
+	border-style: solid;
+}
+textarea {
+        background-color: #dfdeda;
+	border-width: 2;
+	border-color: #004B77;
+	border-style: solid;
+}
+div {
+    width: 70%;
+    height: 23px;
+    background-color: White;
+    clear:both;
+    -webkit-border-radius: 2px;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+.collapsible {
+   background-color: #777;
+   color: white;
+   cursor: pointer;
+   padding: 18px;
+   width: 100%;
+   border: none;
+   text-align: left;
+   outline: none;
+   font-size: 15px;
+ }
+ 
+ .active, .collapsible:hover {
+   background-color: #555;
+ }
+ 
+ .content {
+   padding: 0 18px;
+   display: none;
+   overflow: hidden;
+   background-color: #f1f1f1;
+ }
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color: green;}
+    25%  {background-color: yellow;}
+    50%  {background-color: green;}
+    100% {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: green;}
+    25%  {background-color: yellow;}
+    50%  {background-color: green;}
+    100% {background-color: yellow;}
+}
+
+div.a {
+    text-align: left;
+    padding-left: 12px;
+}
+

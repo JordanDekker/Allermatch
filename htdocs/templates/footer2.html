@@ -1,0 +1,31 @@
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+</td></tr>
+<tr><td valign='bottom' colspan='2'>
+   <table width='100%'><tr>
+      <td valign='bottom'>
+      <td valign='bottom'>
+          <a href='mailto:Gijs.Kleter@wur.nl'>Questions: Dr. Gijs Kleter</a><br>
+      </td>
+      <td valign='bottom' align='right'>
+       <img align='right' src='/static/images/allermatch_logo.png'>
+    </td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

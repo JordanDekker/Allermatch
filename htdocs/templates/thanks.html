@@ -1,0 +1,59 @@
+<html>
+	  <head>
+         <title>Allermatch: Allermatch </title>
+      </head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <body>
+        <table border='0' width='100%' height='100%' cellpadding='0' cellspacing='10'>
+          <tr height =' 1%'>
+           <td colspan='2' valign='top'>
+
+            <table border='0' width='100%' cellpadding='0' cellspacing='0'
+            background="{{ url_for('static', filename='images/allermatch_filler.png') }}">
+            <tr><td valign='top'><a href='http://allermatch.org'>
+              <img border='0' src="{{ url_for('static', filename='images/allermatch_logo.png') }}"></a>
+               </td></tr><tr><td height='10'>&nbsp;</td></tr>
+            </table>
+          </td></tr>
+          <tr>
+             <td valign='top'>
+                  <a href='/index.html'>Home</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/allermatchsearch/form'>Search</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/database.html'>Databases</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/publication.html'>Publication</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/help.html'>Introduction</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/example.html'>Example</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/about.html'>About us</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/feedback.html'>Feedback</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/disclaimer.html'>Disclaimer</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/copyright.html'>Copyright</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/thanks.html'>Thanks</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/references.html'>References</a>&nbsp;&nbsp;&nbsp;<br>
+             </td>
+          <td valign='top'>
+<!--#include virtual="header.html" -->
+
+<h2><a name="Acknowledgement"></a>Acknowledgement</h2>
+
+Financial support for this webtool from Plant Research International, 
+WFSR - Wageningen University and Research, and the Dutch Ministry of Agriculture, 
+Nature, and Food Quality (Research Programs 378, 390, and 404 [North-South]) is gratefully
+acknowledged. Maintenance is however not funded and is currently performed because
+of author's motivation.<br>
+
+<!--#include virtual="footer.html" -->
+  </td></tr>
+    <tr><td valign='bottom' colspan='2'>
+        <table width='100%'><tr>
+           <td valign='bottom'>
+           <td valign='bottom'>
+               <a href='mailto:Gijs.Kleter@wur.nl'>Questions: Dr. Gijs Kleter</a><br>
+           </td>
+           <td valign='bottom' align='right'>
+            <img align='right' src='/static/images/wageningenur.gif'>
+          </td></td></tr>
+     </table>
+  </td></tr>
+</table>
+</body>
+</html>

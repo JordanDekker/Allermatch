@@ -1,0 +1,89 @@
+<html>
+      <head>
+         <title>Allermatch: Allermatch </title>
+      </head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <body>
+        <table border='0' width='100%' height='100%' cellpadding='0' cellspacing='10'>
+          <tr height =' 1%'>
+           <td colspan='2' valign='top'>
+
+            <table border='0' width='100%' cellpadding='0' cellspacing='0'
+                   background="{{ url_for('static', filename='images/allermatch_filler.png') }}">
+               <tr><td valign='top'><a href='http://allermatch.org'>
+                 <img border='0' src="{{ url_for('static', filename='images/allermatch_logo.png') }}"></a>
+               </td></tr><tr><td height='10'>&nbsp;</td></tr>
+            </table>
+          </td></tr>
+          <tr>
+             <td valign='top'>
+                  <a href='/index.html'>Home</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/allermatchsearch/form'>Search</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/database.html'>Databases</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/publication.html'>Publication</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/help.html'>Introduction</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/example.html'>Example</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/about.html'>About us</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/feedback.html'>Feedback</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/disclaimer.html'>Disclaimer</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/copyright.html'>Copyright</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/thanks.html'>Thanks</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/references.html'>References</a>&nbsp;&nbsp;&nbsp;<br>
+             </td>
+          <td valign='top'>
+<!--#include virtual="header.html" -->
+
+<h1 style="text-align: center;">Welcome to Allermatch2<sup>tm</sup></h1>
+Allermatch<sup>tm</sup> is a unique webtool where you can compare the
+amino acid
+sequence of a protein of interest with sequences of allergenic
+proteins. This webtool carries out automatically the procedures for
+predicting the potential allergenicity of proteins by bioinformatics
+approaches as recommended by the Codex alimentarius and the FAO/WHO Expert
+consultation on allergenicity of foods derived through modern
+biotechnology [<a
+  href="references.html#ref_1">1</a>,<a
+  href="references.html#ref_2">2</a>].
+The
+unique features of the Allermatch<sup>tm</sup> webtool allow the user
+in a
+user-friendly and time-saving manner to enter the input sequence and
+retrieve, with a few mouse-clicks, the outcomes of interest in an
+accurate, concise, and comprehensible format.<br>
+<br>
+<h4>Important: please read the <a href="disclaimer.html">
+disclaimer</a> and <a href='copyright.html'>copyright</a> statements before using this website</h4>
+
+<h4>All sequences submitted will be treated confidentially</h4> <h4>No record will be made of your queries.</h4>
+
+<h4><a href='allermatchsearch/form'>Go to the search page</a></h4>
+
+<br></br>
+<br></br>
+<br></br>
+
+<div class="a"><font size="4">Last update: 4 July, 2019</font></div>
+
+ <li>Allermatch<sup>tm</sup> contains 2074 polypeptide sequences (1945 UniProt ids, 30 UniProt ids with multiple polypeptide chains, and 81 GenBank RefSeqProtein ids). 
+ <li>The Allermatch<sup>tm</sup> database (AllergenDB) was constructed using the combined and unique UniProt and GenBank NCBI protein accessions from COMPARE (Comprehensive Protein Allergen Resource), UniProt and the WHO/IUIS Allergen database.
+ <li>The COMPARE database was last accessed on 24 June, 2019
+ <li>The UniProt allergen database was last accessed on 28 June, 2019
+ <li>The WHO/IUIS Allergen database was last accessed on 26 June, 2019
+
+
+<!--#include virtual="footer.html" -->
+  </td></tr>
+     <tr><td valign='bottom' colspan='2'>
+        <table width='100%'><tr>
+           <td valign='bottom'>
+           <td valign='bottom'>
+               <a href='mailto:Gijs.Kleter@wur.nl'>Questions: Dr. Gijs Kleter</a><br>
+           </td>
+           <td valign='bottom' align='right'>
+           <img align='right' src='/static/images/wageningenur.gif'>
+           </td></tr>
+     </table>
+  </td></tr>
+</table>
+</body>
+</html>

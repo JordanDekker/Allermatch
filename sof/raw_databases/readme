@@ -1,0 +1,9 @@
+python create_databases.py Allermatch_Update_sequences_submit_corrected_2nd_time_y2012m08d24.txt
+Imported 1451 sequences
+Per database
+ * UniProt : 448
+ * WHO-IUIS : 1003
+Exported 448 sequences to "SwissProt.fasta"
+Exported 1003 sequences to "WHO_All.fasta"
+Exported 1080 sequences to "All.fasta"
+

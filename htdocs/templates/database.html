@@ -1,0 +1,78 @@
+<html>
+	  <head>
+         <title>Allermatch: Allermatch </title>
+      </head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <body>
+        <table border='00' width='100%' height='100%' cellpadding='0' cellspacing='10'>
+          <tr height =' 1%'>
+           <td colspan='2' valign='top'>
+
+            <table border='0' width='100%' cellpadding='0' cellspacing='0'
+            background="{{ url_for('static', filename='images/allermatch_filler.png') }}">
+            <tr><td valign='top'><a href='http://allermatch.org'>
+              <img border='0' src="{{ url_for('static', filename='images/allermatch_logo.png') }}"></a>
+               </td></tr><tr><td height='10'>&nbsp;</td></tr>
+            </table>
+          </td></tr>
+          <tr>
+             <td valign='top'>
+                  <a href='/index.html'>Home</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/allermatchsearch/form'>Search</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/database.html'>Databases</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/publication.html'>Publication</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/help.html'>Introduction</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/example.html'>Example</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/about.html'>About us</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/feedback.html'>Feedback</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/disclaimer.html'>Disclaimer</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/copyright.html'>Copyright</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/thanks.html'>Thanks</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/references.html'>References</a>&nbsp;&nbsp;&nbsp;<br>
+             </td>
+          <td valign='top'>
+<!--#include virtual="header.html" -->
+
+<h2>Allermatch<sup>tm</sup> database</h2>
+
+Allermatch<sup>tm</sup> contains the entries of three databases of known allergenic proteins that have been listed by:
+<ol>
+  <li>	The UniProt Protein Knowledgebase (<a href='http://www.uniprot.org/docs/allergen'>UniProtKB</a>)
+  <li>	The list of allergen nomenclature of the joint World Health Organization and International Union of Immunological Societies (<a href='http://www.allergen.org'>WHO-IUIS</a>)
+  <li>  The Comprehensive Protein Allergen Resource (<a href='http://comparedatabase.org'>COMPARE</a>)
+</ol>
+
+Signal- and pro-peptides are automatically removed from the allergen sequences based on the predictions of post-translational modifications (PTMs) provided by UniProtKB prior to the addition of sequences to the Allermatch<sup>tm</sup> database (<b>AllergenDB_propeptides_removed</b>). This processing of sequences is in compliance with the recommendations of the FAO/WHO Expert Consultation on the evaluation of potential allergenicity of genetically modified foods (2001; <a href='http://www.who.int/foodsafety/publications/biotech/en/ec_jan2001.pdf'>link</a>) in preparation of the Codex alimentarius' guidelines for the safety assessment of foods derived through biotechnology. This is an outstanding, characteristic feature of the Allermatch<sup>tm</sup> website as compared to other service providers. It helps users to ensure their compliance with the abovementioned recommentations and thereby avoid false positive outcomes that would otherwise be caused by alignments with pro- and signal-peptide segments. The <b>AllergenDB_original_sequences</b> database contains the non-processed allergen sequences with PTMs, and is provided as a separate database in Allermatch<sup>tm</sup>. Users can select the AllergenDB database with the non-processed sequences for comparisons with their query sequence, yet should be aware of the fact that this can yield additional alignments with pro- and signal-peptides still attached to the stored sequences.
+
+<br></br>
+<h3>UniProt</h3>
+The UniProt list of allergens refers to accessions on the UniProt website, which contain well-annotated sequences.<p>
+
+
+<h3>WHO-IUIS</h3>
+
+
+The WHO-IUIS list contains allergens, for example, maize allergen Zea m 14, each of which has been subdivided into one or more isoallergens.  These isoallergens are allergenic proteins from the same source that show minor differences, such as single amino acid substitutions (for example, Zea m 14.0101 and Zea m 14.0102). This list contains allergenic proteins that have been registered following submission, for example by scientists who have discovered a new allergen.  For registration, the allergenic protein should comply with certain requirements, such as a minimal number of patients that have shown reactivity towards this protein, as well as a minimal prevalence (5 percent) of reactivity among these patients. WHO-IUIS provides references to accessions in the UniProt and GenBank/GenPept sequence databases, which have consequently been used by Allermatch<sup>tm</sup>. The annotation of the sequences obtained from sources other than UniProt may not always provide details to the same level as in UniProt accessions.
+
+
+
+<h3>COMPARE</h3>
+
+The Comprehensive Protein Allergen Resource is a new comprehensive repository of protein sequences of known or putative allergens. It was created via the development of an automated rule-based sorting algorithm tool, combined with a review of the literature associated with the identified sequences.  An independent peer-review panel of allergy experts exclusively from the public sector decides on the final content of the database. These three rigorous and well documented processes have been carefully designed to meet the needs for allergy safety assessment. The combination of these three processes has resulted in the new COMPARE database released on 03 February 2017. The database includes a comprehensive repository of all known allergens, with the addition of newly identified allergens.
+
+<!--#include virtual="footer.html" -->
+  </td></tr>
+     <tr><td valign='bottom' colspan='2'>
+        <table width='100%'><tr>
+           <td valign='bottom'>
+           <td valign='bottom'>
+               <a href='mailto:Gijs.Kleter@wur.nl'>Questions: Dr. Gijs Kleter</a><br>
+           </td>
+           <td valign='bottom' align='right'>
+            <img align='right' src='/static/images/wageningenur.gif'>
+          </td></tr>
+     </table>
+  </td></tr>
+</table>
+</body>
+</html>

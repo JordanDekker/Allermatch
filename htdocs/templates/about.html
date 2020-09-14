@@ -1,0 +1,65 @@
+<html>
+	  <head>
+         <title>Allermatch: Allermatch </title>
+      </head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <body>
+        <table border='0' width='100%' height='100%' cellpadding='0' cellspacing='10'>
+          <tr height =' 1%'>
+           <td colspan='2' valign='top'>
+
+            <table border='0' width='100%' cellpadding='0' cellspacing='0'
+            background="{{ url_for('static', filename='images/allermatch_filler.png') }}">
+            <tr><td valign='top'><a href='http://allermatch.org'>
+              <img border='0' src="{{ url_for('static', filename='images/allermatch_logo.png') }}"></a>
+               </td></tr><tr><td height='10'>&nbsp;</td></tr>
+            </table>
+          </td></tr>
+          <tr>
+             <td valign='top'>
+                  <a href='/index.html'>Home</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/allermatchsearch/form'>Search</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/database.html'>Databases</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/publication.html'>Publication</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/help.html'>Introduction</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/example.html'>Example</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/about.html'>About us</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/feedback.html'>Feedback</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/disclaimer.html'>Disclaimer</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/copyright.html'>Copyright</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/thanks.html'>Thanks</a>&nbsp;&nbsp;&nbsp;<br>
+                  <a href='/references.html'>References</a>&nbsp;&nbsp;&nbsp;<br>
+             </td>
+          <td valign='top'>
+<!--#include virtual="header.html" -->
+<h2><a name="About_us"></a>About us</h2>
+
+This webtool has been constructed through a joint effort of <a
+href="https://www.wur.nl/nl/Onderzoek-Resultaten/Onderzoeksinstituten/food-safety-research.htm">WFSR - Wageningen University and Research</a> and <a
+href="http://www.wur.nl/en/Expertise-Services/Research-Institutes/plant-research/Bioscience.htm">Bioscience - Wageningen University and Research</a>.
+
+<p>WFSR is specialised in food safety research, including the safety of
+genetically engineered foods and animal feed. For example, WFSR
+develops advanced methods for detection- and safety testing- of
+genetically engineered foods. In addition, WFSR advises national and
+international authorities on the safety of genetically engineered foods
+and feed.<p>
+
+Participants for WFSR in this project are 
+<ul>
+  <li> Dr. ir. Gijs A. Kleter (<a
+       href="mailto:gijs.kleter@wur.nl">gijs.kleter@wur.nl</a>)</li>
+  <li> Dr. A.A.C.M. Peijnenburg (<a href="mailto:ad.peijnenburg@wur.nl">
+       ad.peijnenburg@wur.nl</a>).</li>
+  <li> Dr. ir. Martijn Staats (<a href="mailto:martijn.staats@wur.nl.nl">martijn.staats@wur.nl</a>)</li>
+</ul>
+
+The web server software is written in 
+<a href="http://www.python.org">Python&nbsp;</a> and is hosted by an 
+<a href="http://httpd.apache.org">apache webserver</a> using 
+<a href="http://www.modpython.org/">mod_python</a>.<br><br>
+
+<!--#include virtual="footer.html" -->
+</table>
+</body>
+</html>

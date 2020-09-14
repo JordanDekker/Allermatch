@@ -1,0 +1,20 @@
+# From the original website configuration
+# Not allowed
+#AllowOverride AuthConfig
+Options +Includes
+Order allow,deny
+allow from all
+# Turn mod_include on first !
+XBitHack on
+
+#AddHandler mod_python .py
+#PythonHandler mod_python.publisher
+#PythonHandler allermatch
+#PythonDebug On
+
+# Local settings, so things work
+
+#XBitHack on
+#AddHandler python-program .py
+#PythonHandler mod_python.cgihandler
+#PythonDebug On
